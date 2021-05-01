@@ -5,25 +5,84 @@
     <title>Title</title>
 </head>
 <style>
-    #container{
-        display:flex
+
+
+    form{
+
+        background-color: white;
+        width: 50%;
+        height: 600px;
     }
-    #centered{
-        display:flex;
-        flex-direction:column;
+    form h1{
+        margin-left: 15px;
+    }
+    form p{
+        margin-left: 15px;
+    }
+    form label{
+        margin-left: 15px;
+    }
+
+    input[type=text], input[type=password] {
+        position: relative;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        width: 90%;
+        padding: 15px;
+        box-sizing:border-box;
+        margin-left: 15px;
+        margin-right: 200px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        background: #f1f1f1;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+    button {
+        background-color:grey;
+        color: black;
+        padding: 14px 20px;
+        margin-left: 25px;
+        margin-top: 8px;
+        border: none;
+        cursor: pointer;
+        width: 150px;
+        box-sizing:border-box;
+        opacity: 0.9;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    button:hover {background-color: #3e8e41}
+
+    button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
     }
 
 </style>
 <body>
+<form  >
+    <div class="container">
+        <h1>if you have any question you can send it to our email</h1>
 
-<div id="container">
-    <img src="./img/abstract-background-health-care-science-icon-pattern-medical-innovation-concept_44392-177.jpg" />
-    <div id="centered">
-        <img src="./img/Capture.PNG"/>
-        <img src="http://placehold.it/150x150/AAAAAA" />
+        <hr>
+
+
+        <input type="text" onfocus="this.value=''" placeholder="Enter you questions" name="questions"required>
+        <button type="submit" class="button">Send</button>
+
+
     </div>
-    <img src="http://placehold.it/150x250/BBBBBB" />
-</div>
+</form>
+
 
 </body>
 </html>
