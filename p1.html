@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+
+
+<style>
+
+    body{
+        background-image: url("./img/e1a0097b1dc2b68c6663a96084c66f27.jpg") ;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    @font-face {
+     font-family:landasans ;
+        src: url('./fonts/LandasansMedium-ALJ6m.otf');
+    }
+    .navbar.navbar-default{
+        background-color:lightcyan ;
+    }
+
+    #img{
+        height: 100px;
+        width: 150px;
+    }
+    .navbutt{
+        width: 200px;
+        height: 100px;
+        font-size: 20px;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .navbutt:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    .navbutt:hover{
+        background-color: #3e8e41;
+    }
+    .nav.navbar-nav li a{
+        color: black;
+        text-align: center;
+        horiz-align: center;
+        top: 23px;
+        margin: auto;
+    }
+    .butt{
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        font-family: Arial;
+        background-color: white;
+        padding: 0;
+        border: none;
+        background: none;
+        font-size: 20px;
+        border-radius: 2px;
+        background-color: lightblue;
+        left:1450px;
+        top: 25px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .butt:hover {background-color: #3e8e41}
+
+    .butt:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    #start{
+        font-family: landasans;
+        font-size:90px;
+        position: relative;
+        margin: auto;
+        margin-left: 650px;
+        margin-top: 100px;
+    }
+    #start2{
+        font-family: landasans;
+        font-size:50px;
+        color: #3e8e41;
+        position: relative;
+        margin: auto;
+        margin-left: 700px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+
+    }
+
+    {box-sizing:border-box}
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 700px;
+        position: relative;
+        margin: auto;
+        margin-top: 80px;
+
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        margin-bottom: 100px;
+    }
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    .slideimg{
+        width: 200px;
+        height: 450px;
+    }
+    .mySlides {
+        display:none;
+    }
+
+    #slide1 {display:block}
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    .cerimg {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-left: 300px;
+        flex-basis: 40%;
+        vertical-align:middle;
+        display: inline-block;
+        vertical-align: top;
+
+    }
+    .T {
+        font-size: 30px;
+        padding-left: 20px;
+        font-family: landasans;
+        display: inline-block;
+    }
+
+</style>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img id="img" src="./img/Capture-removebg-preview.png">
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="navbutt"><a href="#">Home</a></li>
+            <li class="navbutt"><a href="#">Medications</a></li>
+            <li class="navbutt"><a href="#">Acitivity Log</a></li>
+            <li class="navbutt"><a href="#">Staff</a></li>
+            <li class="navbutt"><a href="p4.html">Support</a></li>
+        </ul>
+        <a href="p2.html" style="color:black;"> <button class="butt" >Sign Up</button></a>
+        <a href="p3.html" style="color:black; "> <button class="butt" style="left:1580px;top: 25px;" >Login</button></a>
+    </div>
+</nav>
+<div >
+<p id="start">welcome to MedTracker</p>
+</div>
+
+<div class="slideshow-container">
+
+    <div id="slide1" class="mySlides fade">
+        <img class="slideimg" src="./img/healthdirect-holiday-tips-infographic-6abe18.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img class="slideimg" src="./img/Screenshot (198).png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img class="slideimg" src="./img/Capture-removebg-preview.png" style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<div clas="container ">
+   <p id="start2">Want to start working with us ??</p>
+    <div>
+        <img class="cerimg" src="./img/unnamed.png">
+        <p class="T">if you want to start making MedTracker a part of your<br> life you can start by clicking here to create your account<br>by clicking this link:<br><a class="T" href="p3.html">signup</a></p>
+        <img class="cerimg" style="margin-left: 20px" src="./img/unnamed.png">
+        <p class="T">already have an account ??<br> well click on this link to log into you <br>by clicking this link:<br><a class="T" href="p3.html">login</a></p>
+
+    </div>
+
+
+
+</div>
+<div>
+
+</div>
+
+</body>
+
+</html>
