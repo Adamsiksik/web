@@ -1,3 +1,27 @@
+<?php
+if(isset($_POST['Name'])&&isset($_POST['psw'])&&isset($_POST['email'])) {
+    $name=$_POST['Name'];
+    $email = $_POST['email'];
+    $PN = $_POST['PhoneNumber'];
+    $pass = $_POST['psw'];
+    echo $name;
+    echo $email;
+
+
+    try {
+        $db = new mysqli('localhost', 'root', '', 'proj');
+        $qry = "INSERT INTO `members` (`Name`, `PhoneNumber`, `Email`, `Password`, `Gender`) VALUES ('".$name."', '".$PN."', '".$email ."', SHA1('".$pass."'), 'male')";
+        $rs=$db->query($qry);
+        $db->commit();
+        $db->close();
+        echo $rs;
+
+        header('Location:p1.html');
+    } catch (Exception $e) {
+        echo "there is already an email with that value";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,10 +69,10 @@
         margin-left: 15px;
     }
     form p{
-          margin-left: 15px;
-      }
+        margin-left: 15px;
+    }
     form label{
-       margin-left: 15px;
+        margin-left: 15px;
     }
 
     input[type=text], input[type=password] {
@@ -117,14 +141,14 @@
         position: relative;
         margin-left: 20px;
         margin-top: 100px;
-        }
+    }
 
 
 
 </style>
 <body >
 
-<form onsubmit=" verifyPassword()" style="border:1px solid #ccc" >
+<form onsubmit=" verifyPassword()" style="border:1px solid #ccc" method="post" >
     <div class="container">
         <h1>Sign Up</h1>
         <p>Please Enter a Valid Username and Password </p>

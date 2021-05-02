@@ -1,3 +1,27 @@
+<?php
+if(isset($_POST['email'])&&isset($_POST['psw'])) {
+    $user = $_POST['email'];
+    $pass = $_POST['psw'];
+    try {
+        $db = new mysqli('localhost', 'root', '', 'proj');
+        $qry = "select * from members";
+        $db->query($qry);
+        $res = $db->query($qry);
+        for ($i = 0; $i < $res->num_rows; $i++) {
+            $row = $res->fetch_assoc();
+            if(( $row['Email']=$user)&&($row['Password']==sha1($pass))){
+                header('Location:p1.html');
+            }
+            else{
+                return false;
+            }
+        }
+        $db->close();
+    } catch (Exception $e) {
+
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +99,7 @@
 
 </style>
 <body>
-<form  style="border:1px solid #ccc">
+<form  style="border:1px solid #ccc" method="post">
     <div class="container">
         <h1>Login</h1>
 
