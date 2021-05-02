@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['email'])&&isset($_POST['psw'])) {
     $user = $_POST['email'];
     $pass = $_POST['psw'];
@@ -10,10 +11,9 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
         for ($i = 0; $i < $res->num_rows; $i++) {
             $row = $res->fetch_assoc();
             if(( $row['Email']=$user)&&($row['Password']==sha1($pass))){
-                header('Location:p1.html');
-            }
-            else{
-                return false;
+                $_SESSION['isMember']=1;
+                $_SESSION['UserName']=$user;
+                header('Location:check.php');
             }
         }
         $db->close();
