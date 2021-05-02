@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 
+<script>
+
+    function verifyPassword() {
+        var pw = document.getElementById("pass").value;
+        var pwr = document.getElementById("passr").value;
+        if (pw != pwr) {
+            document.getElementById("lab").style.visibility = 'visible';
+            event.preventDefault();
+        }
+        else{
+            return true;
+        }
+
+    }
+</script>
+
+
+
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -14,12 +32,14 @@
         background-size: 2000px;
         position: absolute;
     }
+
     form{
         margin-left: 520px;
         margin-top:180px;
         background-color: white;
         width: 50%;
-        height: 600px;
+        height:850px;
+        margin-bottom: 80px;
     }
     form h1{
         margin-left: 15px;
@@ -93,26 +113,57 @@
         animation: button-loading-spinner 1s ease infinite;
     }
 
+    .gen{
+        position: relative;
+        margin-left: 20px;
+        margin-top: 100px;
+        }
 
 
 
 </style>
 <body >
 
-<form  style="border:1px solid #ccc">
+<form onsubmit=" verifyPassword()" style="border:1px solid #ccc" >
     <div class="container">
         <h1>Sign Up</h1>
         <p>Please Enter a Valid Username and Password </p>
         <hr>
+        <label ><b>FullName</b></label>
+        <input type="text" placeholder="Name" name="Name" required>
+
+        <label ><b>PhoneNumber</b></label>
+        <input type="text" onfocus="this.value=''"  placeholder="Enter PhoneNumber" name="PhoneNumber"required>
 
         <label ><b>Email</b></label>
         <input type="text" onfocus="this.value=''" placeholder="Enter Email" name="email"required>
 
         <label ><b>Password</b></label>
-        <input type="password" onfocus="this.value=''" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Repeat Password" id="pass" name="psw" required>
 
         <label ><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input type="password" placeholder="Repeat Password" id="passr" name="psw-repeat" required>
+
+        <label id="lab" style="color: red; visibility: hidden">Please make sure the password is the same</label>
+        <BR>
+        <BR>
+        <label ><b>Gender:</b></label>
+        <br>
+        <br>
+
+        <label class="gen">Male
+            <input type="radio" checked="checked" name="radio">
+            <span ></span>
+        </label>
+
+        <label class="gen">Female
+            <input type="radio" name="radio">
+            <span ></span>
+        </label>
+
+        <br>
+        <br>
+        <br>
 
         <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -120,7 +171,7 @@
 
         <div class="clearfix">
             <a href="p1.html" style="color:black;"> <button type="button" class="cancelbtn">Cancel</button></a>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button type="submit" class="submit">Sign Up</button>
         </div>
     </div>
 </form>

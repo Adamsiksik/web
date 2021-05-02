@@ -6,12 +6,22 @@
 </head>
 <style>
 
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lightyellow;
+        background-image: url("./img/624111.jpg");
+        background-repeat: no-repeat;
+        background-size: 2000px;
+        position: absolute;
+    }
 
     form{
-
+        font-family: "Open Sans";
         background-color: white;
-        width: 50%;
-        height: 600px;
+        width: 1000px;
+        height: 400px;
+        margin-left: 500px;
+        margin-top:210px;
     }
     form h1{
         margin-left: 15px;
@@ -25,7 +35,7 @@
 
     input[type=text], input[type=password] {
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 40px;
         margin-top: 10px;
         width: 90%;
         padding: 15px;
@@ -71,15 +81,11 @@
 <body>
 <form  >
     <div class="container">
-        <h1>if you have any question you can send it to our email</h1>
-
+        <br>
+        <h1>If you have any question you can send it to our email</h1>
         <hr>
-
-
         <input type="text" onfocus="this.value=''" placeholder="Enter you questions" name="questions"required>
         <button type="submit" class="button">Send</button>
-
-
     </div>
 </form>
 
