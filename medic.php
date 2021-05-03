@@ -12,14 +12,26 @@ if(isset($_SESSION['isMember'])){
         $rs=$mysqli->query($sql);
         ;?>
         <style>
-            table, th, td {
+            table {
+                margin-top: 100px;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 8px;
                 border: 1px solid black;
                 border-collapse: collapse;
             }
-            th, td {
-                padding: 5px;
-                text-align: left;
+
+            tr:nth-child(even){background-color: #f2f2f2}
+
+            th {
+                background-color: #4CAF50;
+                color: white;
             }
+
         </style>
 
         <!DOCTYPE html>
@@ -39,9 +51,7 @@ if(isset($_SESSION['isMember'])){
         <?php
         if ($rs = mysqli_query($mysqli, $sql)) {
             while ($row = mysqli_fetch_row($rs)) {
-
                     echo " <tr>";
-                    echo " </tr>";
                     echo " <td>";
                     printf($row[0]);
                     echo " </td>";
@@ -54,6 +64,7 @@ if(isset($_SESSION['isMember'])){
                     echo " <td>";
                     printf($row[3]);
                     echo " </td>";
+                echo " </tr>";
 
             }
             $rs -> free_result();
