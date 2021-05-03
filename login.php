@@ -5,7 +5,7 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
     $pass = $_POST['psw'];
     try {
         $db = new mysqli('localhost', 'root', '', 'proj');
-        $qry = "select * from members";
+        $qry = "select * from member";
         $db->query($qry);
         $res = $db->query($qry);
         for ($i = 0; $i < $res->num_rows; $i++) {
@@ -13,7 +13,12 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
             if(( $row['Email']=$user)&&($row['Password']==sha1($pass))){
                 $_SESSION['isMember']=1;
                 $_SESSION['UserName']=$user;
-                header('Location:check.php');
+                if($_SESSION['UserName']=="adamsiki@Hotmail.com"){
+                    header('Location:admin.php');
+                }
+                else{
+                    header('Location:medic.php');
+                }
             }
         }
         $db->close();
@@ -117,7 +122,7 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
 
         <div class="clearfix">
             <a href="p1.html" style="color:black;"> <button type="button" class="cancelbtn">Cancel</button></a>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button type="submit" class="signupbtn">login</button>
         </div>
     </div>
 </form>

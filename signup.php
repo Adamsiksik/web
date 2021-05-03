@@ -10,7 +10,7 @@ if(isset($_POST['Name'])&&isset($_POST['psw'])&&isset($_POST['email'])) {
 
     try {
         $db = new mysqli('localhost', 'root', '', 'proj');
-        $qry = "INSERT INTO `members` (`Name`, `PhoneNumber`, `Email`, `Password`, `Gender`) VALUES ('".$name."', '".$PN."', '".$email ."', SHA1('".$pass."'), 'male')";
+        $qry = "INSERT INTO `member` (`Name`, `PhoneNumber`, `Email`, `Password`, `Gender`) VALUES ('".$name."', '".$PN."', '".$email ."', SHA1('".$pass."'), 'male')";
         $rs=$db->query($qry);
         $db->commit();
         $db->close();
