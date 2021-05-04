@@ -35,6 +35,7 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
 </head>
 <style>
     body {
+        * box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
         background-color: lightyellow;
         background-image: url("./img/67813040-abstract-background-medical-substance-and-molecules-.jpg");
@@ -102,7 +103,9 @@ if(isset($_POST['email'])&&isset($_POST['psw'])) {
         transform: translateY(4px);
     }
 
+
 </style>
+
 <body>
 <form  style="border:1px solid #ccc" method="post">
     <div class="container">
